@@ -18,4 +18,3 @@ env:
 logging:
   level:
     root: INFO
-

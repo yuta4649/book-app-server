@@ -37,3 +37,7 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+bootRun {
+	jvmArgs = ['-Doracle.jdbc.J2EE13Compliant=true']
+}
