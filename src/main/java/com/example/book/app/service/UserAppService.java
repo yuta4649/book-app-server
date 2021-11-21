@@ -1,7 +1,9 @@
 package com.example.book.app.service;
 
 
+import com.example.book.app.dto.msg.LoginReqMsg;
 import com.example.book.domain.entity.User;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,5 +22,13 @@ public interface UserAppService {
      * @param mailAddress メールアドレス
      * @return User
      */
-    public User getUserByMailAddress(String mailAddress);
+    User getUserByMailAddress(String mailAddress);
+
+    /**
+     * ログインする
+     *
+     * @param loginReqMsg リクエスト
+     * @return UsernamePasswordAuthenticationToken
+     */
+    UsernamePasswordAuthenticationToken login(LoginReqMsg loginReqMsg);
 }

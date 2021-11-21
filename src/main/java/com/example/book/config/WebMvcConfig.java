@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * WebMvcConfigファイル
  *
- * @author YutaMori 
+ * @author YutaMori
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
