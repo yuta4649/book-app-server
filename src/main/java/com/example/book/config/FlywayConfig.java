@@ -1,5 +1,6 @@
 package com.example.book.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.flyway.FlywayMigrationStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,17 +10,15 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author YutaMori
  */
+@Slf4j
 @Configuration
 public class FlywayConfig {
 
     @Bean
     public FlywayMigrationStrategy strategy() {
         return flyway -> {
-            // flyway_schema_historyの初期化
-            flyway.clean();
-            // マイグレーション実行
-            flyway.migrate();
+            // initData.bat ファイルを実行してDBを制御するため処理しない
+            log.info("skip Startup flywayMigration");
         };
     }
-
 }

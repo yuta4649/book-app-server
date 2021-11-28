@@ -11,6 +11,10 @@ echo drop tables
 
 echo create tables
 %DB_SQLPLUS% < %SQL_DIR%USER_TABLE.sql
+%DB_SQLPLUS% < %SQL_DIR%SPRING_SESSION_TABLE.sql
+%DB_SQLPLUS% < %SQL_DIR%SPRING_SESSION_ATTRIBUTES_TABLE.sql
+
+echo insert data
 
 pause
 exit
