@@ -22,7 +22,7 @@ public class CoreWebSecurityConfig {
      *
      * @return AuthenticationEntryPoint
      */
-    @Bean
+    @Bean("authenticationEntryPoint")
     public AuthenticationEntryPoint authenticationEntryPoint() {
         return new Http403ForbiddenEntryPoint();
     }

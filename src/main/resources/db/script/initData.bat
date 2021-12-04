@@ -15,6 +15,7 @@ echo create tables
 %DB_SQLPLUS% < %SQL_DIR%SPRING_SESSION_ATTRIBUTES_TABLE.sql
 
 echo insert data
+%DB_SQLPLUS% < %SQL_DIR%USER_DATA.sql
 
 pause
 exit

@@ -13,9 +13,9 @@ import lombok.Setter;
 public class LoginReqMsg {
 
     /**
-     * メールアドレス
+     * ログインID
      */
-    private String mailAddress;
+    private String loginId;
 
     /**
      * パスワード
