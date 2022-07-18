@@ -10,7 +10,7 @@ spring:
   jackson:
     time-zone: Asia/Tokyo
 server:
-  port: 8081
+  port: 8080
   servlet:
     context-path: /api
 env:
