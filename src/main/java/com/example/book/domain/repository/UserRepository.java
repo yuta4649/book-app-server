@@ -28,9 +28,9 @@ public interface UserRepository extends CrudRepository<User, String> {
     Optional<User> getUserByMailAddress(@Param("mailAddress") String mailAddress);
 
     /**
-     * UserAllを外部結合で取得する
+     * login用ユーザ情報を取得する
      *
-     * @param loginId メールアドレス
+     * @param loginId LoginID or メールアドレス
      * @return Optional<Users>
      */
     @Query("SELECT * FROM USERS WHERE mail_address = :loginId OR login_id = :loginId")
