@@ -24,15 +24,15 @@ public interface UserRepository extends CrudRepository<User, String> {
      * @param mailAddress メールアドレス
      * @return Optional<User>
      */
-    @Query("SELECT * FROM USER WHERE mail_address = :mailAddress AND deleted_flg = 0")
+    @Query("SELECT * FROM USERS WHERE mail_address = :mailAddress AND deleted_flg = 0")
     Optional<User> getUserByMailAddress(@Param("mailAddress") String mailAddress);
 
     /**
      * UserAllを外部結合で取得する
      *
-     * @param mailAddress メールアドレス
-     * @return Optional<UserAll>
+     * @param loginId メールアドレス
+     * @return Optional<Users>
      */
-    @Query("SELECT * FROM USER JOIN USER_AUTH ON USER_AUTH.user_id = USER.user_id WHERE USER.mail_address = :mailAddress AND USER.deleted_flg = 0")
-    Optional<Users> findByMailAddress(@Param("mailAddress") String mailAddress);
+    @Query("SELECT * FROM USERS WHERE mail_address = :loginId OR login_id = :loginId")
+    Optional<Users> findByMailAddressOrLoginId(@Param("loginId") String loginId);
 }

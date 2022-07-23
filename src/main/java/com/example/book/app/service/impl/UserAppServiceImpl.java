@@ -56,7 +56,7 @@ public class UserAppServiceImpl implements UserAppService {
     @Override
     public UsernamePasswordAuthenticationToken login(LoginReqMsg loginReqMsg) {
 
-        Users user = userRepository.findByMailAddress(loginReqMsg.getLoginId()).orElseThrow(()
+        Users user = userRepository.findByMailAddressOrLoginId(loginReqMsg.getLoginId()).orElseThrow(()
                 -> new BadCredentialsException("User not found"));
         // ユーザーがロックされている場合処理を抜ける
         if (user.getLockedFlg().equals("1")) {
